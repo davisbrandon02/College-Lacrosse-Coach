@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ui/ViewTeamWindow.gd" type="Script" id=1]
+[ext_resource path="res://fonts/created_fonts/HeaderFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/font_data/Roboto-Medium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/created_fonts/NormalFont.tres" type="DynamicFont" id=4]
+
+[sub_resource type="Theme" id=1]
+PopupMenu/fonts/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="ViewTeamWindow" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 720.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 152.0
+margin_bottom = 73.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Team:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TeamSelect" type="OptionButton" parent="ColorRect"]
+margin_left = 176.0
+margin_top = 16.0
+margin_right = 704.0
+margin_bottom = 79.0
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="ScrollContainer"]
+margin_right = 720.0
+margin_bottom = 1152.0
+rect_min_size = Vector2( 720, 1152 )
+
+[node name="StartersLabel" type="Label" parent="ScrollContainer/Control"]
+margin_right = 185.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 2 )
+text = "Starters:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pos" type="Label" parent="ScrollContainer/Control"]
+margin_top = 64.0
+margin_right = 80.0
+margin_bottom = 107.0
+custom_fonts/font = ExtResource( 4 )
+text = "Pos"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="ScrollContainer/Control"]
+margin_left = 160.0
+margin_top = 64.0
+margin_right = 255.0
+margin_bottom = 107.0
+custom_fonts/font = ExtResource( 4 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ovr" type="Label" parent="ScrollContainer/Control"]
+margin_left = 624.0
+margin_top = 64.0
+margin_right = 694.0
+margin_bottom = 107.0
+custom_fonts/font = ExtResource( 4 )
+text = "OVR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartersContainer" type="VBoxContainer" parent="ScrollContainer/Control"]
+margin_top = 112.0
+margin_right = 720.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="item_selected" from="ColorRect/TeamSelect" to="." method="_on_TeamSelect_item_selected"]

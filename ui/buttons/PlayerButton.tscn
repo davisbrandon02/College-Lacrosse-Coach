@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/created_fonts/NormalFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/buttons/PlayerButton.gd" type="Script" id=2]
+
+[node name="PlayerButton" type="Button"]
+margin_right = 688.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 1 )
+align = 0
+script = ExtResource( 2 )
+
+[node name="PositionLabel" type="Label" parent="."]
+margin_left = 16.0
+margin_right = 48.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 1 )
+text = "G"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="."]
+margin_left = 160.0
+margin_right = 392.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 1 )
+text = "PLAYERNAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AbilityLabel" type="Label" parent="."]
+margin_left = 640.0
+margin_right = 688.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 1 )
+text = "60"
+__meta__ = {
+"_edit_use_anchors_": false
+}
