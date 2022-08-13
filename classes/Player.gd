@@ -8,7 +8,7 @@ var year : int = -1
 var position: int = -1 # (Goalie : 0, Defense : 1, Midfield : 2, Attack : 3)
 var potential: int = -1
 
-# Stats
+# Attributes
 var dodging: int = -1
 var shooting: int = -1
 var passing: int = -1
@@ -43,3 +43,11 @@ func get_average(_array: Array):
 		count += 1
 	
 	return sum / count
+
+
+# Helper functions
+func _to_string():
+	return ("%s %s %s %s" % [firstName, lastName, str(position), str(get_overall())])
+
+func get_team():
+	return DB.get_player_team(self)
